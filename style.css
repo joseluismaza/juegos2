@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
+
+.hidden{
+  display: none;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: "Lekton", monospace;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #3D5467;
+}
+
+h1{
+  font-size: 2.5em;
+  text-align: center;
+  margin: 0;
+}
+button{
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: "Lekton", monospace;
+  border-radius: 15px;
+  background-color: #DB5461;
+  margin: 10px auto;
+}
+
+.score{
+  margin-top: 15px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  border: 2px solid #F1EDEE;
+  border-radius: 10px;
+  background-color: #1B9AAA;
+
+} 
+.tipoJuego{
+  text-align: center;
+  justify-content: center;
+}
+.eleccion a {
+  text-decoration: none;
+  color: black;
+}
+
+/* TRES EN RAYA */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  column-gap: 18px;
+  row-gap: 9px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: #F1EDEE;
+  border-radius: 15px;
+  border: 5px solid #1B9AAA;
+  font-family: "Playwrite CL", cursive;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  
+}
+
+.restart{
+  display: block;
+}
+/* TRES EN RAYA */
+
+/* PIEDRA PAPEL TIJERAS */
+#piedraContent{
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+#piedra{
+  margin-bottom: 20px;
+}
+
+.choice{
+  font-size: 2.5rem;
+  margin: 0 20px 20px;
+  padding: 10px 20px;
+  border: 1px solid #F1EDEE;
+  background-color: #F1EDEE;
+
+}
+
+.choice:hover{
+  background-color: #f0f0f0;
+    border-color: #888;
+}
+
+.results p{
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+/* PIEDRA PAPEL TIJERAS */
+
+/* Ahorcado */
+.ahorcado-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.word {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.letters button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #F1EDEE;
+  border: 3px solid #1B9AAA;
+  border-radius: 15px;
+}
+
+.ahorcado {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.ahorcado .part {
+  display: none;
+  position: absolute;
+}
+
+.cabeza {
+  width: 40px;
+  height: 40px;
+  border: 5px solid black;
+  border-radius: 50%;
+  top: 50px;
+  left: 75px;
+}
+
+.cuerpo {
+  width: 5px;
+  height: 80px;
+  background: black;
+  top: 95px;
+  left: 92px;
+}
+
+.brazo-izq {
+  width: 5px;
+  height: 50px;
+  background: black;
+  top: 95px;
+  left: 60px;
+  transform: rotate(-30deg);
+}
+
+.brazo-der {
+  width: 5px;
+  height: 50px;
+  background: black;
+  top: 95px;
+  left: 120px;
+  transform: rotate(30deg);
+}
+
+.pierna-izq {
+  width: 5px;
+  height: 50px;
+  background: black;
+  top: 170px;
+  left: 60px;
+  transform: rotate(30deg);
+}
+
+.pierna-der {
+  width: 5px;
+  height: 50px;
+  background: black;
+  top: 170px;
+  left: 120px;
+  transform: rotate(-30deg);
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (min-width: 768px) {
+  .game-board {
+    grid-template-columns: repeat(3, 120px);
+    gap: 15px;
+  }
+
+  .cell {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 550px){
+  .choice{
+    font-size: 12px;
+  }
+  
+  button, h1, p{
+    font-size: 15px;
+  }
+
+  .results p{
+    font-size: 12px;
+  }
+  .ahorcado div{
+    height: 20%;
+    width: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .letters {
+    width: 50%;
+  }
+
+  .ahorcado {
+    width: 300px;
+    height: 400px;
+  }
+
+  .word {
+    font-size: 2rem;
+  }
+
+  .letters button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+}

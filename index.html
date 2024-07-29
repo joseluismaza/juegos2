@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juegos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playwrite+CL:wght@100..400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header class="tipoJuego">
+    <h1>Elige tu Juego</h1>
+    <button class="eleccion" id="tresRaya">Tres en Raya</button>
+    <button class="eleccion" id="piedraInd">Piedra Papel Tijeras</button>
+    <button class="eleccion" id="ahorcadoInd">Ahorcado</button>
+  </header>
+  <div id="tresRayaContent" class="hidden">
+    <div class="status"></div>
+    <div id="tres">
+      <h1>TRES EN RAYA</h1>
+    </div>
+    <div class="score">Récord: 0</div>
+    <div class="game-board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+
+    <button class="restart">Reiniciar Juego</button>
+  </div>
+  <div id="piedraContent" class="hidden">
+    <div id="piedra">
+      <h1>Piedra, Papel, Tijeras</h1>
+    </div>
+    <div class="choices">
+      <button class="choice" data-choice="piedra"><i class="fas fa-hand-rock"></i> Piedra</button>
+      <button class="choice" data-choice="papel"><i class="fas fa-hand-paper"></i> Papel</button>
+      <button class="choice" data-choice="tijeras"><i class="fas fa-hand-scissors"></i> Tijeras</button>
+    </div>
+    <div class="results">
+      <p id="playerChoice">Jugador: </p>
+      <p id="computerChoice">Computadora: </p>
+      <p id="result">Resultado: </p>
+    </div>
+    <button class="restart">Reiniciar Juego</button>
+  </div>
+  <div id="ahorcadoContent" class="hidden">
+    <div class="ahorcado-container">
+      <h1>Ahorcado</h1>
+      <div class="ahorcado">
+        <div class="part cabeza"></div>
+        <div class="part cuerpo"></div>
+        <div class="part brazo-izq"></div>
+        <div class="part brazo-der"></div>
+        <div class="part pierna-izq"></div>
+        <div class="part pierna-der"></div>
+      </div>
+      <div class="hint" id="hint"></div>
+      <div class="word" id="word"></div>
+      <div class="letters" id="letters"></div>
+      <button class="restart">Reiniciar Juego</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
